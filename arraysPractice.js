@@ -6,6 +6,9 @@ var arr = [10,20,30];
 
   //Code Here
 
+function first (arrayName){
+  return arrayName[0];
+}
 
 //Next problem
 
@@ -16,7 +19,9 @@ var arr = [40,50,60];
 
 
   //Code Here
-
+function last (arrayName){
+  return arrayName[arrayName.length -1]
+}
 
 //Next Problem
 
@@ -25,7 +30,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 //Create a function named 'looper' that is given family as it's only argument, loops through the given array, and alerts every item in the array.
 
   //Code Here
-
+function looper (arrayName){
+  for (i =0; i < arrayName.length; i++){
+    alert(arrayName[i]);
+  }
+}
 
 //Next problem
 
@@ -35,7 +44,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 //Write a function called reversedLooper that is given letters as it's only argument and loops through the given array backwards alerting every item in the array starting at the end.
 
   //Code Here
-
+function reversedLooper(arrayName){
+  for (i=arrayName.length-1; i>=0; i--){
+    alert(arrayName[i]);
+  }
+}
 
 //Next Problem
 
@@ -44,7 +57,14 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
 
   //Code Here
-
+function evenFinder(arrayName){
+  for (i=0; i<arrayName.length; i++){
+    if (arrayName[i] % 2 !== 0){
+      arrayName.splice(i, 1);
+    }
+  }
+return arrayName;
+}
 
 //Next problem
 
@@ -56,6 +76,22 @@ var nums = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 
   //Code Here
+
+function divider (numbersArray){
+  var evens = [];
+  var odds = [];
+  var newArray = [evens, odds];
+  for (i=0; i<numbersArray.length; i++){
+    if (numbersArray[i] % 2 !== 0){
+      odds.push(numbersArray[i]);
+    }
+    else{
+      evens.push(numbersArray[i]);
+    }
+  }
+  return newArray;
+
+}
 
 
 //Next Problem
@@ -70,6 +106,20 @@ var getRandomArbitrary = function() {
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
+
+  function finder(numArray){
+    var rando = getRandomArbitrary();
+    console.log(rando);
+    for (i=0; i<numArray.length; i++){
+      if (numArray[i] === rando){
+        return true;
+      }
+      else {
+        return false;
+        }
+      }
+    }
+
 
   //Code Here
 
@@ -270,3 +320,4 @@ Once you find the particular index he's located in, delete him from the array.*/
   //Code Here
 
 //The activity we just did is very much how data works in 'the real world'.
+

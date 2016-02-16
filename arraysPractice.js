@@ -109,16 +109,18 @@ var getRandomArbitrary = function() {
 
   function finder(numArray){
     var rando = getRandomArbitrary();
+    var found = false;
     console.log(rando);
     for (i=0; i<numArray.length; i++){
       if (numArray[i] === rando){
-        return true;
+        found = true;
+        break;
       }
-      else {
-        return false;
-        }
-      }
+      return found;
+     }
     }
+    
+
 
 
   //Code Here
@@ -179,7 +181,9 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 
   //Code Here
 
+function addTen (list){
 
+}
 
 //Next Problem
 

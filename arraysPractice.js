@@ -110,14 +110,13 @@ var getRandomArbitrary = function() {
   function finder(numArray){
     var rando = getRandomArbitrary();
     var found = false;
-    console.log(rando);
     for (i=0; i<numArray.length; i++){
       if (numArray[i] === rando){
         found = true;
         break;
       }
-      return found;
      }
+     return found;
     }
     
 
@@ -134,7 +133,9 @@ var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
   //Code Here
-
+function reverse(strang){
+  return strang.split("").reverse().join("");
+}
 
 //Next Problem
 
@@ -156,6 +157,27 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
   //Code Here
+
+  function removeItem(list, itemToRemove){
+    if (Array.isArray(list) === true && typeof itemToRemove === "string"){
+      for (i=0; i < list.length; i++){
+        if (list[i] === itemToRemove){
+          list.splice(list[i], 1);
+          return list;
+        }
+        else {
+
+          return list;
+        }
+      }
+    }
+    else {
+
+      return [];
+
+      }
+
+  }
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];

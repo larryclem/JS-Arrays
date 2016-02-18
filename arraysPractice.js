@@ -61,6 +61,7 @@ function evenFinder(arrayName){
   for (i=0; i<arrayName.length; i++){
     if (arrayName[i] % 2 !== 0){
       arrayName.splice(i, 1);
+      i--;
     }
   }
 return arrayName;
@@ -158,27 +159,26 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
   //Code Here
 
-  function removeItem(list, itemToRemove){
-    if (Array.isArray(list) === true && typeof itemToRemove === "string"){
-      for (i=0; i < list.length; i++){
-        if (list[i] === itemToRemove){
-          list.splice(list[i], 1);
-          return list;
-        }
-        else {
 
-          return list;
-        }
+  function removeItem(myGroceryList, itemToRemove){
+    for(i=0; i < myGroceryList.length; i++){
+      if (myGroceryList[i] === itemToRemove){
+        myGroceryList.splice(i, 1);
       }
     }
-    else {
-
-      return [];
-
-      }
-
+    return myGroceryList;
   }
 
+    function addItem(myGroceryList, itemToAdd){
+  
+    for(i=0; i < myGroceryList.length; i++){
+      if (myGroceryList.indexOf(itemToAdd) === -1){
+        myGroceryList.push(itemToAdd);
+        return myGroceryList;
+      } 
+    }
+    return myGroceryList;
+}
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
 
@@ -203,8 +203,12 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 
   //Code Here
 
-function addTen (list){
-
+function addTen(arr){
+  for (var i=0; i<arr.length; i++){
+    j = parseInt(arr[i], 10);
+    arr.splice(i, 1, j+10)
+  }
+  return arr;
 }
 
 //Next Problem
